@@ -1,0 +1,343 @@
+CURL:
+1. Post family members:
+
+curl --location --request POST 'http://localhost:5000/familymanagement/addfamilymembers' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    [
+        {
+            "id": "001",
+            "firstname":"Patrick",
+            "lastname":"Earnshaw",
+            "gender":"M",
+            "age":35
+        },
+        {
+            "id": "002",
+            "firstname":"Hannah",
+            "lastname":"Earnshaw",
+            "gender":"F",
+            "age":34
+        },
+        {
+            "id": "003",
+            "firstname":"Catherine",
+            "lastname":"Earnshaw",
+            "gender":"F",
+            "age":4
+        },
+        {
+            "id": "004",
+            "firstname":"Hindley",
+            "lastname":"Earnshaw",
+            "gender":"M",
+            "age":5
+        }
+    ],
+    [
+        {
+            "id": "005",
+            "firstname":"Andrew",
+            "lastname":"Linton",
+            "gender":"M",
+            "age":45
+        },
+        {
+            "id": "006",
+            "firstname":"Dolores",
+            "lastname":"Linton",
+            "gender":"F",
+             "age":43
+        },
+        {
+            "id": "007",
+            "firstname":"Isabella",
+            "lastname":"Linton",
+            "gender":"F",
+             "age":15
+        },
+        {
+            "id": "008",
+            "firstname":"Edgar",
+            "lastname":"Linton",
+            "gender":"M",
+             "age":14
+        },
+        {
+            "id": "009",
+            "firstname":"Heathcliff",
+            "lastname":"Linton",
+            "gender":"M",
+             "age":10
+        }
+    ]
+
+]'
+
+2. Post relations
+curl --location --request POST 'http://localhost:5000/familymanagement/addeditrelations' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    [
+        {
+        "MemberId1":"001",
+        "MemberId2":"002",
+        "Relation":"married"
+        },
+        {
+        "MemberId1":"002",
+        "MemberId2":"001",
+        "Relation":"married"
+        },
+        {
+        "MemberId1":"003",
+        "MemberId2":"001",
+        "Relation":"child"
+        },
+        {
+        "MemberId1":"004",
+        "MemberId2":"001",
+        "Relation":"child"
+        },
+        {
+        "MemberId1":"001",
+        "MemberId2":"003",
+        "Relation":"parent"
+        },
+        {
+        "MemberId1":"001",
+        "MemberId2":"004",
+        "Relation":"parent"
+        },
+        {
+        "MemberId1":"003",
+        "MemberId2":"002",
+        "Relation":"child"
+        },
+        {
+        "MemberId1":"004",
+        "MemberId2":"002",
+        "Relation":"child"
+        },
+        {
+        "MemberId1":"002",
+        "MemberId2":"003",
+        "Relation":"parent"
+        },
+        {
+        "MemberId1":"002",
+        "MemberId2":"004",
+        "Relation":"parent"
+        },
+         {
+        "MemberId1":"004",
+        "MemberId2":"003",
+        "Relation":"sibling"
+        },
+        {
+        "MemberId1":"003",
+        "MemberId2":"004",
+        "Relation":"sibling"
+        },
+        {
+        "MemberId1":"004",
+        "MemberId2":"003",
+        "Relation":"sibling"
+        }
+    ],
+    [
+         {
+        "MemberId1":"005",
+        "MemberId2":"006",
+        "Relation":"divorced"
+        },
+         {
+        "MemberId1":"006",
+        "MemberId2":"005",
+        "Relation":"divorced"
+        },
+         {
+        "MemberId1":"007",
+        "MemberId2":"005",
+        "Relation":"child"
+        },
+         {
+        "MemberId1":"008",
+        "MemberId2":"005",
+        "Relation":"child"
+        },
+         {
+        "MemberId1":"009",
+        "MemberId2":"005",
+        "Relation":"child"
+        },
+        {
+        "MemberId1":"005",
+        "MemberId2":"007",
+        "Relation":"parent"
+        },
+         {
+        "MemberId1":"005",
+        "MemberId2":"008",
+        "Relation":"parent"
+        },
+         {
+        "MemberId1":"005",
+        "MemberId2":"009",
+        "Relation":"parent"
+        },
+         {
+        "MemberId1":"007",
+        "MemberId2":"006",
+        "Relation":"child"
+        },
+         {
+        "MemberId1":"008",
+        "MemberId2":"006",
+        "Relation":"child"
+        },
+         {
+        "MemberId1":"009",
+        "MemberId2":"006",
+        "Relation":"child"
+        },
+        {
+        "MemberId1":"006",
+        "MemberId2":"007",
+        "Relation":"parent"
+        },
+         {
+        "MemberId1":"006",
+        "MemberId2":"008",
+        "Relation":"parent"
+        },
+         {
+        "MemberId1":"006",
+        "MemberId2":"009",
+        "Relation":"parent"
+        },
+        {
+        "MemberId1":"007",
+        "MemberId2":"008",
+        "Relation":"sibling"
+        },
+        {
+        "MemberId1":"008",
+        "MemberId2":"007",
+        "Relation":"sibling"
+        },
+        {
+        "MemberId1":"007",
+        "MemberId2":"009",
+        "Relation":"sibling"
+        },
+        {
+        "MemberId1":"009",
+        "MemberId2":"007",
+        "Relation":"sibling"
+        },
+         {
+        "MemberId1":"008",
+        "MemberId2":"009",
+        "Relation":"sibling"
+        },
+         {
+        "MemberId1":"009",
+        "MemberId2":"008",
+        "Relation":"sibling"
+        }
+         
+    ]
+    
+]'
+
+3. Edit family member:
+curl --location --request PUT 'http://localhost:5000/familymanagement/editmember' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+            "id": "001",
+            "firstname":"Chinmay",
+            "lastname":"Kelkar",
+            "gender":"M",
+            "age":36
+ }
+'
+
+4. Edit relation:
+curl --location --request POST 'http://localhost:5000/familymanagement/addeditrelations' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    [
+       {
+        "MemberId1":"005",
+        "MemberId2":"006",
+        "Relation":"married"
+        },
+        {
+        "MemberId1":"006",
+        "MemberId2":"005",
+        "Relation":"married"
+        }
+    ]
+]'
+
+5. Delete family member:
+curl --location --request DELETE 'http://localhost:5000/familymanagement/deletemember?memberId=002'
+
+6. Get all family members:
+curl --location --request GET 'http://localhost:5000/familymanagement/getallfamilymembers'
+
+7. Get all relations:
+curl --location --request GET 'http://localhost:5000/familymanagement/getallrelations'
+
+8. Test multiple marriages are not allowed:
+curl --location --request POST 'http://localhost:5000/familymanagement/addeditrelations' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    [
+        {
+            "MemberId1":"001",
+            "MemberId2":"005",
+            "Relation":"married"
+        }
+    ]
+]'
+
+9. Test you can't be your own sibling
+curl --location --request POST 'http://localhost:5000/familymanagement/addeditrelations' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    [
+        {
+            "MemberId1":"001",
+            "MemberId2":"001",
+            "Relation":"sibling"
+        }
+    ]
+]'
+
+10. Test you can't marry yourself
+curl --location --request POST 'http://localhost:5000/familymanagement/addeditrelations' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    [
+        {
+            "MemberId1":"001",
+            "MemberId2":"001",
+            "Relation":"married"
+        }
+    ]
+]'
+
+11. Test you can't marry your sibling
+curl --location --request POST 'http://localhost:5000/familymanagement/addeditrelations' \
+--header 'Content-Type: application/json' \
+--data-raw '[
+    [
+        {
+            "MemberId1":"003",
+            "MemberId2":"004",
+            "Relation":"married"
+        }
+    ]
+]'

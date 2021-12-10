@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "6067f6db-c575-4834-bc5f-3844b23a28aa",
+		"name": "data-structures-assignment5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Family Memeber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    [\n        {\n            \"id\": \"001\",\n            \"firstname\":\"Patrick\",\n            \"lastname\":\"Earnshaw\",\n            \"gender\":\"M\",\n            \"age\":35\n        },\n        {\n            \"id\": \"002\",\n            \"firstname\":\"Hannah\",\n            \"lastname\":\"Earnshaw\",\n            \"gender\":\"F\",\n            \"age\":34\n        },\n        {\n            \"id\": \"003\",\n            \"firstname\":\"Catherine\",\n            \"lastname\":\"Earnshaw\",\n            \"gender\":\"F\",\n            \"age\":4\n        },\n        {\n            \"id\": \"004\",\n            \"firstname\":\"Hindley\",\n            \"lastname\":\"Earnshaw\",\n            \"gender\":\"M\",\n            \"age\":5\n        }\n    ],\n    [\n        {\n            \"id\": \"005\",\n            \"firstname\":\"Andrew\",\n            \"lastname\":\"Linton\",\n            \"gender\":\"M\",\n            \"age\":45\n        },\n        {\n            \"id\": \"006\",\n            \"firstname\":\"Dolores\",\n            \"lastname\":\"Linton\",\n            \"gender\":\"F\",\n             \"age\":43\n        },\n        {\n            \"id\": \"007\",\n            \"firstname\":\"Isabella\",\n            \"lastname\":\"Linton\",\n            \"gender\":\"F\",\n             \"age\":15\n        },\n        {\n            \"id\": \"008\",\n            \"firstname\":\"Edgar\",\n            \"lastname\":\"Linton\",\n            \"gender\":\"M\",\n             \"age\":14\n        },\n        {\n            \"id\": \"009\",\n            \"firstname\":\"Heathcliff\",\n            \"lastname\":\"Linton\",\n            \"gender\":\"M\",\n             \"age\":10\n        }\n    ]\n\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/addfamilymembers",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"addfamilymembers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Relations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    [\n        {\n        \"MemberId1\":\"001\",\n        \"MemberId2\":\"002\",\n        \"Relation\":\"married\"\n        },\n        {\n        \"MemberId1\":\"002\",\n        \"MemberId2\":\"001\",\n        \"Relation\":\"married\"\n        },\n        {\n        \"MemberId1\":\"003\",\n        \"MemberId2\":\"001\",\n        \"Relation\":\"child\"\n        },\n        {\n        \"MemberId1\":\"004\",\n        \"MemberId2\":\"001\",\n        \"Relation\":\"child\"\n        },\n        {\n        \"MemberId1\":\"001\",\n        \"MemberId2\":\"003\",\n        \"Relation\":\"parent\"\n        },\n        {\n        \"MemberId1\":\"001\",\n        \"MemberId2\":\"004\",\n        \"Relation\":\"parent\"\n        },\n        {\n        \"MemberId1\":\"003\",\n        \"MemberId2\":\"002\",\n        \"Relation\":\"child\"\n        },\n        {\n        \"MemberId1\":\"004\",\n        \"MemberId2\":\"002\",\n        \"Relation\":\"child\"\n        },\n        {\n        \"MemberId1\":\"002\",\n        \"MemberId2\":\"003\",\n        \"Relation\":\"parent\"\n        },\n        {\n        \"MemberId1\":\"002\",\n        \"MemberId2\":\"004\",\n        \"Relation\":\"parent\"\n        },\n         {\n        \"MemberId1\":\"004\",\n        \"MemberId2\":\"003\",\n        \"Relation\":\"sibling\"\n        },\n        {\n        \"MemberId1\":\"003\",\n        \"MemberId2\":\"004\",\n        \"Relation\":\"sibling\"\n        },\n        {\n        \"MemberId1\":\"004\",\n        \"MemberId2\":\"003\",\n        \"Relation\":\"sibling\"\n        }\n    ],\n    [\n         {\n        \"MemberId1\":\"005\",\n        \"MemberId2\":\"006\",\n        \"Relation\":\"divorced\"\n        },\n         {\n        \"MemberId1\":\"006\",\n        \"MemberId2\":\"005\",\n        \"Relation\":\"divorced\"\n        },\n         {\n        \"MemberId1\":\"007\",\n        \"MemberId2\":\"005\",\n        \"Relation\":\"child\"\n        },\n         {\n        \"MemberId1\":\"008\",\n        \"MemberId2\":\"005\",\n        \"Relation\":\"child\"\n        },\n         {\n        \"MemberId1\":\"009\",\n        \"MemberId2\":\"005\",\n        \"Relation\":\"child\"\n        },\n        {\n        \"MemberId1\":\"005\",\n        \"MemberId2\":\"007\",\n        \"Relation\":\"parent\"\n        },\n         {\n        \"MemberId1\":\"005\",\n        \"MemberId2\":\"008\",\n        \"Relation\":\"parent\"\n        },\n         {\n        \"MemberId1\":\"005\",\n        \"MemberId2\":\"009\",\n        \"Relation\":\"parent\"\n        },\n         {\n        \"MemberId1\":\"007\",\n        \"MemberId2\":\"006\",\n        \"Relation\":\"child\"\n        },\n         {\n        \"MemberId1\":\"008\",\n        \"MemberId2\":\"006\",\n        \"Relation\":\"child\"\n        },\n         {\n        \"MemberId1\":\"009\",\n        \"MemberId2\":\"006\",\n        \"Relation\":\"child\"\n        },\n        {\n        \"MemberId1\":\"006\",\n        \"MemberId2\":\"007\",\n        \"Relation\":\"parent\"\n        },\n         {\n        \"MemberId1\":\"006\",\n        \"MemberId2\":\"008\",\n        \"Relation\":\"parent\"\n        },\n         {\n        \"MemberId1\":\"006\",\n        \"MemberId2\":\"009\",\n        \"Relation\":\"parent\"\n        },\n        {\n        \"MemberId1\":\"007\",\n        \"MemberId2\":\"008\",\n        \"Relation\":\"sibling\"\n        },\n        {\n        \"MemberId1\":\"008\",\n        \"MemberId2\":\"007\",\n        \"Relation\":\"sibling\"\n        },\n        {\n        \"MemberId1\":\"007\",\n        \"MemberId2\":\"009\",\n        \"Relation\":\"sibling\"\n        },\n        {\n        \"MemberId1\":\"009\",\n        \"MemberId2\":\"007\",\n        \"Relation\":\"sibling\"\n        },\n         {\n        \"MemberId1\":\"008\",\n        \"MemberId2\":\"009\",\n        \"Relation\":\"sibling\"\n        },\n         {\n        \"MemberId1\":\"009\",\n        \"MemberId2\":\"008\",\n        \"Relation\":\"sibling\"\n        }\n         \n    ]\n    \n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/addeditrelations",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"addeditrelations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Family Member",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"id\": \"001\",\n            \"firstname\":\"Chinmay\",\n            \"lastname\":\"Kelkar\",\n            \"gender\":\"M\",\n            \"age\":36\n }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/editmember",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"editmember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit relation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    [\n       {\n        \"MemberId1\":\"005\",\n        \"MemberId2\":\"006\",\n        \"Relation\":\"married\"\n        },\n        {\n        \"MemberId1\":\"006\",\n        \"MemberId2\":\"005\",\n        \"Relation\":\"married\"\n        }\n    ]\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/addeditrelations",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"addeditrelations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Family Member",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/familymanagement/deletemember?memberId=002",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"deletemember"
+					],
+					"query": [
+						{
+							"key": "memberId",
+							"value": "002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Family Members",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/familymanagement/getallfamilymembers",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"getallfamilymembers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Relations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/familymanagement/getallrelations",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"getallrelations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Multiple Marriages Not Allowed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    [\n        {\n            \"MemberId1\":\"001\",\n            \"MemberId2\":\"005\",\n            \"Relation\":\"married\"\n        }\n    ]\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/addeditrelations",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"addeditrelations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test you can't be your own sibling",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    [\n        {\n            \"MemberId1\":\"001\",\n            \"MemberId2\":\"001\",\n            \"Relation\":\"sibling\"\n        }\n    ]\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/addeditrelations",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"addeditrelations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test you can't marry yourself",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    [\n        {\n            \"MemberId1\":\"001\",\n            \"MemberId2\":\"001\",\n            \"Relation\":\"married\"\n        }\n    ]\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/addeditrelations",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"addeditrelations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test you can't marry your sibling",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    [\n        {\n            \"MemberId1\":\"003\",\n            \"MemberId2\":\"004\",\n            \"Relation\":\"married\"\n        }\n    ]\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/familymanagement/addeditrelations",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"familymanagement",
+						"addeditrelations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
